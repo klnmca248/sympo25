@@ -1,0 +1,177 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  
+  background:#af4eaf8e;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Heading Styles */
+h1 {
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+  /* color: #fcfafc; */
+}
+.dd {
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #998aec; /* Fill color */
+  margin-bottom: 10px;
+  
+  /* Stroke */
+  -webkit-text-stroke: 2px #0b74ca; /* Outline color */
+  -moz-text-stroke: 2px #0e72ac;
+  text-stroke: 2px #1368ad;
+
+  /* Optional: add shadow for extra depth */
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+
+
+/* h2 {
+  font-size: 1.8rem;
+  margin: 30px 0 15px 0;
+  color: #f53434;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+} */
+ h2 {
+  font-size: 1.8rem;
+  margin: 30px 0 15px 0;
+  text-align: center;
+  padding-bottom: 5px;
+  position: relative;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  /* Glow Effect */
+  text-shadow: 
+    0 0 5px #00e6ff,
+    0 0 10px #00e6ff,
+    0 0 20px #00e6ff,
+    0 0 40px #0077ff,
+    0 0 80px #0077ff;
+  animation: glowPulse 2s infinite alternate;
+}
+
+/* Different Glow for Non-Technical */
+.event-box.nontech ~ h2 {
+  text-shadow: 
+    0 0 5px #8cff66,
+    0 0 10px #8cff66,
+    0 0 20px #28a745,
+    0 0 40px #28a745,
+    0 0 80px #28a745;
+}
+
+/* Glowing Animation */
+@keyframes glowPulse {
+  from {
+    text-shadow: 
+      0 0 5px #00e6ff,
+      0 0 10px #00e6ff,
+      0 0 20px #00e6ff,
+      0 0 40px #0077ff,
+      0 0 80px #0077ff;
+  }
+  to {
+    text-shadow: 
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 40px #0077ff,
+      0 0 80px #0055ff,
+      0 0 120px #0033cc;
+  }
+}
+
+/* Event Boxes */
+.event-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin: 15px auto;
+  max-width: 600px;
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Technical Events - Blue Theme */
+.event-box {
+  border-left: 6px solid #0077ff;
+}
+
+/* Non-Technical Events - Green Theme */
+.event-box.nontech {
+  border-left: 6px solid #28a745;
+}
+
+/* Hover Effect */
+.event-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Event Image */
+.event-img {
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
+}
+
+/* Event Content */
+.event-content {
+  flex-grow: 1;
+  text-align: left;
+}
+
+/* Event Button (Clickable Link) */
+.event-button {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #0077ff;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Different Colors for Buttons */
+.event-box.nontech .event-button {
+  color: #28a745;
+}
+
+/* Hover Animation Underline */
+.event-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 3px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.event-button:hover::after {
+  width: 100%;
+}
+
+.event-button:hover {
+  color: #ff5722;
+}
