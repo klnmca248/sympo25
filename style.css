@@ -1,177 +1,97 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  
-  background:#af4eaf8e;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #12043a, #343499, #4d76e7);
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  animation: gradientShift 15s ease infinite;
 }
 
-/* Container */
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
-  text-align: center;
+/* Background animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Heading Styles */
-h1 {
-  font-weight: bold;
-  text-align: center;
+/* Glowing headline */
+.glow {
+  font-size: 2.5rem;
+  color: #00f7ff;
+  text-shadow: 0 0 10px #00f7ff, 0 0 20px #00c4ff, 0 0 40px #0099ff;
   margin: 10px 0;
-  /* color: #fcfafc; */
-}
-.dd {
-  text-align: center;
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #998aec; /* Fill color */
-  margin-bottom: 10px;
-  
-  /* Stroke */
-  -webkit-text-stroke: 2px #0b74ca; /* Outline color */
-  -moz-text-stroke: 2px #0e72ac;
-  text-stroke: 2px #1368ad;
-
-  /* Optional: add shadow for extra depth */
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-}
-
-
-
-/* h2 {
-  font-size: 1.8rem;
-  margin: 30px 0 15px 0;
-  color: #f53434;
-  text-align: center;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 5px;
-} */
- h2 {
-  font-size: 1.8rem;
-  margin: 30px 0 15px 0;
-  text-align: center;
-  padding-bottom: 5px;
-  position: relative;
-  color: #fff;
-  font-weight: bold;
-  text-transform: uppercase;
-
-  /* Glow Effect */
-  text-shadow: 
-    0 0 5px #00e6ff,
-    0 0 10px #00e6ff,
-    0 0 20px #00e6ff,
-    0 0 40px #0077ff,
-    0 0 80px #0077ff;
   animation: glowPulse 2s infinite alternate;
 }
 
-/* Different Glow for Non-Technical */
-.event-box.nontech ~ h2 {
-  text-shadow: 
-    0 0 5px #8cff66,
-    0 0 10px #8cff66,
-    0 0 20px #28a745,
-    0 0 40px #28a745,
-    0 0 80px #28a745;
+/* Event Rules sub-head */
+.sub-head {
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 0 0 5px #fffa, 0 0 15px #f0f0f0;
+  margin-bottom: 20px;
 }
 
-/* Glowing Animation */
+/* Glow Animation */
 @keyframes glowPulse {
-  from {
-    text-shadow: 
-      0 0 5px #00e6ff,
-      0 0 10px #00e6ff,
-      0 0 20px #00e6ff,
-      0 0 40px #0077ff,
-      0 0 80px #0077ff;
-  }
-  to {
-    text-shadow: 
-      0 0 10px #00ffff,
-      0 0 20px #00ffff,
-      0 0 40px #0077ff,
-      0 0 80px #0055ff,
-      0 0 120px #0033cc;
-  }
+  from { text-shadow: 0 0 10px #00eaff, 0 0 20px #00c4ff; }
+  to { text-shadow: 0 0 20px #00eaff, 0 0 40px #0099ff, 0 0 60px #0077ff; }
 }
 
-/* Event Boxes */
-.event-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 12px;
-  padding: 12px 20px;
-  margin: 15px auto;
-  max-width: 600px;
-  background: #ffffff;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Technical Events - Blue Theme */
-.event-box {
-  border-left: 6px solid #0077ff;
-}
-
-/* Non-Technical Events - Green Theme */
-.event-box.nontech {
-  border-left: 6px solid #28a745;
-}
-
-/* Hover Effect */
-.event-box:hover {
-  transform: scale(1.03);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Event Image */
-.event-img {
-  width: 70px;
-  height: 70px;
-  margin-right: 20px;
-}
-
-/* Event Content */
-.event-content {
-  flex-grow: 1;
-  text-align: left;
-}
-
-/* Event Button (Clickable Link) */
-.event-button {
+/* Headings */
+.highlight {
+  font-size: 1.8rem;
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 10px;
   display: inline-block;
+}
+
+/* Different highlight colors */
+.tech {
+  background: rgba(0, 255, 200, 0.1);
+  border: 2px solid #00ffcc;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+.nontech-head {
+  background: rgba(255, 100, 150, 0.1);
+  border: 2px solid #ff66cc;
+  color: #ff66cc;
+  text-shadow: 0 0 10px #ff66cc;
+}
+
+/* Event Box */
+.event-box {
+  margin: 15px auto;
+  max-width: 400px;
+}
+
+.event-content {
+  padding: 15px;
+}
+
+/* Event Buttons */
+.event-button {
+  display: block;
+  padding: 15px;
   font-size: 1.2rem;
-  font-weight: bold;
+  color: #fff;
   text-decoration: none;
-  color: #0077ff;
-  position: relative;
-  transition: color 0.3s ease;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #fff3;
+  box-shadow: 0 0 8px #00ffcc55;
+  transition: all 0.4s ease-in-out;
 }
 
-/* Different Colors for Buttons */
-.event-box.nontech .event-button {
-  color: #28a745;
-}
-
-/* Hover Animation Underline */
-.event-button::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 3px;
-  background-color: currentColor;
-  transition: width 0.3s ease;
-}
-
-.event-button:hover::after {
-  width: 100%;
-}
-
+/* Hover effect */
 .event-button:hover {
-  color: #ff5722;
+  transform: scale(1.08);
+  background: linear-gradient(90deg, #00ffcc, #0099ff);
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 20px #00ffcc, 0 0 40px #0099ff;
 }
